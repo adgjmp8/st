@@ -1,0 +1,20 @@
+version: '3'
+services:
+  build:
+    image: build_st
+    build: .
+    working_dir: /data
+    volumes:
+      - .:/data
+    command: >
+      bash -c "make clean all"
+    
+  clean:
+    image: build_st
+    build: .
+    working_dir: /data
+    volumes:
+      - .:/data
+    command: >
+      bash -c "make clean"
+    
